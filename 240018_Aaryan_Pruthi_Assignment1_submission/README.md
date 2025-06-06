@@ -7,8 +7,8 @@ The Circuit:
 
 For the entanglement of q1,q2  : I had applied the Hadamard gate on q1 and then used CNOT for entanglement. 
 For the Alice state : I used a parametric circuit and the parameter was basically the angle by which the qubit was reported around y axis in the Bloch sphere .
-For the classical measurement : I had first applied the CNOT on the qubits 0 and 1 and then applied Hadamard gate.
-For the bob qubit : After the measurement, Alice's state collapsed and according to the classical outputs , I applied Pauli X and Pauli Z gates or both depending upon the classical outputs .
+For the classical measurement of Alice state and entangled state : I had first applied the CNOT on the qubits 0 and 1 and then applied Hadamard gate.
+For the bob's qubit: After the measurement, Alice's state collapsed and according to the classical outputs , I applied Pauli X and Pauli Z gates or both depending upon the classical outputs .
 
 The Result : The density matrix created in the end , was same for all measurements of classical outputs whatsoever and Bob's state matched Alice's state in all conditions which confirmed the teleportation of qubit.
 
