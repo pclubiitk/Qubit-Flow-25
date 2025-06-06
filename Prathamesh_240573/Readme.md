@@ -7,11 +7,3 @@ Next, we apply another CNOT gate where q0 controls q1, and then apply a Hadamard
 After that, Alice measures the states of q0 and q1. She sends the measurement results (classical bits) to Bob.
 
 Finally, using these results, Bob applies some corrections to q2 to recreate the original unknown state q0. This completes the teleportation.
-
-
-
-
-
-
-
-
