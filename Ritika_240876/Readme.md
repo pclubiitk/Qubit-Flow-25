@@ -1,7 +1,6 @@
 ## Assignment-1
 
-
-
+I implemented the standard quantum teleportation protocol. I Used a random unitary to generate a test quantum state. Then teleported that state from qubit to ebit1. Verified the teleportation by undoing the random gate and checking if I ended up with ∣0⟩.
 
 
 
