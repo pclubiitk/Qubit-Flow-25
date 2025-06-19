@@ -4,7 +4,7 @@
 
 Hamiltonian H is defined as $$H = J(X_0 \otimes X_1 + Y_0 \otimes Y_1 + Z_0 \otimes Z_1)$$
 
-The system is initialised in the state |01>. The qubits interact via $$ X \otimes X , Y \otimes Y, Z \otimes Z gates $$ and on evolution with time, the state oscillates between |01> and |10>. 
+The system is initialised in the state |01>. The qubits interact via X $\otimes$ X, Y $\otimes$ Y and the Z $\otimes$ Z gates and on evolution with time, the state oscillates between |01> and |10>. 
 
 ## 3- Spin Heisenberg Model
 
