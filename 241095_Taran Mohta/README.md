@@ -1,6 +1,12 @@
-## Assignments 
-# 1: Quantum Teleportation Circuit
-# 2: Digital Simulation of the 2-Spin and 3-Spin Heisenberg Model (IBM-Q)
-# 3: Transpilers
-# 4: Observables, Fidelity and Error Sources under noisy simulation (Assignment 2 Continued)
-# 5: Part 1: AI Powered Transpilers
+## Assignments Overview
+
+### Assignment 1: Quantum Teleportation Circuit
+
+### Assignment 2: Digital Simulation of the 2-Spin and 3-Spin Heisenberg Model (IBM-Q)
+
+### Assignment 3: Transpilers
+
+### Assignment 4: Observables, Fidelity and Error Sources (Extension of Assignment 2)
+
+### Assignment 5 (Part 1): AI-Powered Transpilers
+
