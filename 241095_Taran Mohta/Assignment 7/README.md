@@ -1,34 +1,42 @@
+# Deutsch–Jozsa Algorithm — Qiskit Implementation
 
-# Deutsch–Jozsa Algorithm - Implementation
-
-This is the  implementation of the **Deutsch–Jozsa algorithm**. The Deutsch–Jozsa algorithm is one of the first examples showing an exponential separation between quantum and classical computing for a specific problem.
+This is the implementation of the **Deutsch–Jozsa algorithm**, one of the first quantum algorithms to demonstrate exponential speedup over classical methods.
 
 ---
 
 ## Problem Statement
 
-Given a Boolean function \( f: \{0,1\}^n \rightarrow \{0,1\} \), promised to be either:
+Given a Boolean function:
 
-- **Constant**: same output (0 or 1) for all inputs  
-- **Balanced**: returns 0 for exactly half the inputs, and 1 for the other half
+```
+f: {0, 1}^n → {0, 1}
+```
 
-The task is to determine whether \( f \) is constant or balanced.
+with the promise that it is either:
 
-- **Classical computing**: May require up to \( 2^{n-1} + 1 \) evaluations  
-- **Quantum computing (Deutsch–Jozsa)**: Requires only **1 query** to the oracle
+- **Constant**: outputs 0 or 1 for all inputs
+- **Balanced**: outputs 0 for half of all possible inputs and 1 for the other half
+
+The goal is to determine whether $f$ is **constant** or **balanced**.
+
+- **Classical approach**: requires up to $2^{n-1} + 1$ evaluations in the worst case  
+- **Deutsch–Jozsa algorithm**: solves it with **1 query** using quantum computation
 
 ---
 
 ## Circuit Overview
 
-The Deutsch–Jozsa algorithm uses \( n+1 \) qubits:
+The Deutsch–Jozsa algorithm uses $n + 1$ qubits:
 
-- \( n \) qubits in the input register, initialized to \( |0\rangle^{\otimes n} \)
-- 1 target qubit initialized to \( |1\rangle \)
+- $n$ qubits for the input register, initialized to $|0\rangle^{\otimes n}$
+- 1 qubit for the target, initialized to $|1\rangle$
 
-The quantum circuit structure is as follows:
+---
 
+### Circuit Diagram (ASCII)
 
+```text
+Deutsch–Jozsa Algorithm Circuit (n = 2 shown)
 
       ┌───┐              ┌───────┐      ┌────────────┐      ┌───────┐      ┌───┐
 |0⟩───┤ H ├──────────────┤       ├──────┤    U_f      ├──────┤ H ⊗ n ├──────┤ M ├───
@@ -41,33 +49,28 @@ The quantum circuit structure is as follows:
       ┌───┐              │       │      └─────────────┘
 |1⟩───┤ X ├───┤ H ├──────┘
       └───┘
+```
 
 ---
 
 ## What the Algorithm Does
 
-1. **Initialize** the qubits:  
-   \( |0\rangle^{\otimes n} \otimes |1\rangle \)
-
-2. **Apply Hadamard gates** to all qubits
-
-3. **Apply oracle unitary** \( U_f \) such that:  
-   \[
-   U_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle
-   \]
-
-4. **Apply Hadamard** again to the first \( n \) qubits
-
-5. **Measure** the first \( n \) qubits
+1. **Initialize**: the input register to $|0\rangle^{\otimes n}$ and target qubit to $|1\rangle$
+2. **Apply Hadamard** gates to all qubits
+3. **Apply Oracle** $U_f$:  
+   $$
+   U_f |x⟩|y⟩ = |x⟩|y \oplus f(x)⟩
+   $$
+4. **Apply Hadamard** to the first $n$ qubits again
+5. **Measure** the first $n$ qubits
 
 ---
 
-## Interpretation of Output
+## Output Interpretation
 
-The measurement histogram from the simulator tells us the nature of the function:
+The final histogram tells us whether $f$ is constant or balanced:
 
-- **Only `000...0` occurs**: The function is **constant**
-- **Any other result**: The function is **balanced**
+- If **only** `'000...0'` appears: $f$ is **constant**
+- If **any other output** appears: $f$ is **balanced**
 
-
-
+---
